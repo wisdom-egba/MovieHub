@@ -1,10 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap");
-
 body {
   background-color: #222222;
   font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@layer components {
+  .heroBtn {
+    @apply uppercase bg-[#ADF802] border-[#ADF802] rounded-lg text-sm p-2 text-gray-500 transition-all border hover:border-[#ADF802] hover:text-gray-400 hover:bg-transparent cursor-pointer outline-none;
+  }
+  .heroBtn2 {
+    @apply uppercase bg-transparent border-[#ADF802] rounded-lg text-sm p-2 text-gray-300 transition-all border hover:border-[#ADF802] hover:text-gray-500 hover:bg-[#ADF802] cursor-pointer outline-none;
+  }
 }

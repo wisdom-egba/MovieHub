@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Sidebar } from "./components/Sidebar"
 import { Bookmark } from "./pages/Bookmark/Bookmark"
 import { Search } from "./pages/Search/Search"
 import { User } from "./pages/User/User"
@@ -11,18 +10,16 @@ import { SharedLayout } from "./pages/Home/SharedLayout"
 function App() {
   return (
     <BrowserRouter>
-      <Sidebar>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<All />} />
-            <Route path="tvshows" element={<TvShow />} />
-            <Route path="movies" element={<Movie />} />
-          </Route>
-          <Route path="/bookmark" element={<Bookmark />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/user" element={<User />} />
-        </Routes>
-      </Sidebar>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<All />} />
+          <Route path="tvshows" element={<TvShow />} />
+          <Route path="movies" element={<Movie />} />
+        </Route>
+        <Route path="/bookmark" element={<Bookmark />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/user" element={<User />} />
+      </Routes>
     </BrowserRouter>
   )
 }
