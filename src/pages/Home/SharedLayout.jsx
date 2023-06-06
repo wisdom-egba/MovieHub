@@ -4,7 +4,7 @@ import { HomeNav } from "./HomeNav"
 HomeNav
 export const SharedLayout = () => {
   return (
-    <div>
+    <div className="">
       <HomeNav />
       <Outlet />
     </div>

@@ -27,12 +27,14 @@ export const Sidebar = ({ children }) => {
     },
   ]
   return (
-    <div className=" flex">
-      <div className="">
+    <div className="flex h-[100vh]">
+      <div className=" flex flex-col justify-evenly bg-[#222222]">
         {menuItems.map((items, index) => (
           <NavLink to={items.path} key={index}>
             <div>
-              <li className=" list-none">{items.icon}</li>
+              <li className=" list-none text-3xl px-4 text-gray-600 hover:text-[#ADF802] fill-[#FFFA33] py-5 focus:opacity-25">
+                {items.icon}
+              </li>
             </div>
           </NavLink>
         ))}
