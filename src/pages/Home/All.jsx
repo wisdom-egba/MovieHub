@@ -5,12 +5,16 @@ import { request } from "../../Request"
 
 export const All = () => {
   return (
-    <div className="w-full">
+    <div className=" object-fill">
       <MovieList />
-      {/* <Rows title="Upcoming" fetchUrl={request.requestUpcoming} />
-      <Rows title="Popular" fetchUrl={request.requestPopular} />
-      <Rows title="Top-Rated" fetchUrl={request.requestToprated} />
-      <Rows title="Now Playing" fetchUrl={request.requestNowPlaying} /> */}
+      <Rows rowId="1" title="Upcoming" fetchUrl={request.requestUpcoming} />
+      <Rows rowId="2" title="Popular" fetchUrl={request.requestPopular} />
+      <Rows rowId="3" title="Top-Rated" fetchUrl={request.requestToprated} />
+      <Rows
+        rowId="4"
+        title="Now Playing"
+        fetchUrl={request.requestNowPlaying}
+      />
     </div>
   )
 }

@@ -18,7 +18,7 @@ export const MovieList = () => {
     }
   }
   return (
-    <div className=" w-full h-[200px] md:h-[550px] object-contain text-white">
+    <div className=" w-full h-[200px] md:h-[600px] object-contain text-white">
       <div className=" w-full h-full">
         <div className="absolute w-full h-[200px] md:h-[550px] bg-gradient-to-r from-black"></div>
         <img
@@ -26,7 +26,7 @@ export const MovieList = () => {
           src={`https://image.tmdb.org/t/p/original/${movieRandom?.backdrop_path}`}
           alt={movieRandom?.title}
         />
-        <div className="max-w-[90%] m-auto">
+        <div className="">
           <div className="absolute w-full top-[5%] md:top-[20%]">
             <h1 className="text-3xl md:text-5xl font-bold">
               {movieRandom?.title}
