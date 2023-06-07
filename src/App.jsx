@@ -6,22 +6,31 @@ import { All } from "./pages/Home/All"
 import { TvShow } from "./pages/Home/TvShow"
 import { Movie } from "./pages/Home/Movie"
 import { SharedLayout } from "./pages/Home/SharedLayout"
+import { Account } from "./pages/login/Account"
+import { Login } from "./pages/login/Login"
+import { SignUp } from "./pages/login/SignUp"
+import { AuthContextApi } from "./context/AuthContextApi"
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<All />} />
-            <Route path="tvshows" element={<TvShow />} />
-            <Route path="movies" element={<Movie />} />
-          </Route>
-          <Route path="/bookmark" element={<Bookmark />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/user" element={<User />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthContextApi>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<SharedLayout />}>
+              <Route index element={<All />} />
+              <Route path="tvshows" element={<TvShow />} />
+              <Route path="movies" element={<Movie />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+            </Route>
+            <Route path="/bookmark" element={<Bookmark />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/account" element={<Account />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthContextApi>
     </>
   )
 }

@@ -18,8 +18,12 @@ export const HomeNav = () => {
             </Link>
           </div>
           <div className="flex gap-4">
-            <button className="heroBtn">Sign Up</button>
-            <button className="heroBtn2">Sign In</button>
+            <Link to="/signup">
+              <button className="heroBtn">Sign Up</button>
+            </Link>
+            <Link to="/login">
+              <button className="heroBtn2">Sign In</button>
+            </Link>
           </div>
         </div>
       </div>

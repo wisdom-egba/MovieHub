@@ -20,7 +20,7 @@ export const MovieList = () => {
   return (
     <div className=" w-full h-[200px] md:h-[600px] object-contain text-white">
       <div className=" w-full h-full">
-        <div className="absolute w-full h-[200px] md:h-[550px] bg-gradient-to-r from-black"></div>
+        <div className="absolute w-full h-[200px] md:h-[600px] bg-gradient-to-r from-black"></div>
         <img
           className="h-full w-full opacity-210"
           src={`https://image.tmdb.org/t/p/original/${movieRandom?.backdrop_path}`}

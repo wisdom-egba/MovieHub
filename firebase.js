@@ -5,15 +5,22 @@ import { getAuth } from "firebase/auth"
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER,
-  appId: process.env.REACT_APP_APP_ID,
+export const firebaseConfig = {
+  apiKey: "AIzaSyDBNI7LmjeQCavl6vTU8jVZZEQhFM5BGgo",
+  authDomain: "movie-hubz.firebaseapp.com",
+  projectId: "movie-hubz",
+  storageBucket: "movie-hubz.appspot.com",
+  messagingSenderId: "422797405447",
+  appId: "1:422797405447:web:e7370effe7b421ee6269a2",
 }
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
+
+// import.meta.env.REACT_APP_FIREBASE_API_KEY,
+//   import.meta.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+//   import.meta.env.REACT_APP_FIREBASE_PROJECT_ID,
+//   import.meta.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+//   import.meta.env.REACT_APP_MESSAGE_SENDER,
+//  import.meta.env.REACT_APP_APP_ID,

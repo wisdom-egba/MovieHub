@@ -7,7 +7,6 @@ export const SharedLayout = () => {
   return (
     <div className="">
       <HomeNav />
-
       <Outlet />
     </div>
   )
