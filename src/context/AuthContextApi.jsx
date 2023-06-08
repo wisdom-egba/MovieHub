@@ -34,12 +34,12 @@ export const AuthContextApi = ({ children }) => {
   //   }
   // })
   return (
-    <AuthContextApi.Provider value={{ signUp, signOut, logIn, logOut, user }}>
+    <AuthContext.Provider value={{ signUp, logIn, logOut, user }}>
       {children}
-    </AuthContextApi.Provider>
+    </AuthContext.Provider>
   )
 }
 
-export function UserAuth() {
+export const UserAuth = () => {
   return useContext(AuthContext)
 }
