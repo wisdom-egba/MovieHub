@@ -1,7 +1,25 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { UserAuth } from "../../context/AuthContextApi"
 
 export const Login = () => {
+  const { user, logIn } = UserAuth()
+  const navigate = useNavigate()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError("")
+    try {
+      await logIn(email, password)
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+      setError(`Invalid login detail`)
+    }
+  }
   return (
     <div className="w-full h-screen">
       <img
@@ -14,10 +32,16 @@ export const Login = () => {
         <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
           <div className="max-w-[320px] mx-auto py-16">
             <h1 className="text-3xl font-bold">Sign In</h1>
-            <form action="" className="flex flex-col py-4">
+            {error ? <p className="text-red-700">{error}</p> : null}
+            <form
+              onSubmit={handleSubmit}
+              action=""
+              className="flex flex-col py-4"
+            >
               <input
                 className="p-3 my-2 rounded-lg bg-gray-600 outline-none focus:drop-shadow-lg"
                 type="email"
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter Email"
                 name="email"
                 id="email "
@@ -26,6 +50,7 @@ export const Login = () => {
               <input
                 className="p-3 my-2 rounded-lg bg-gray-600 outline-none focus:shadow-lg"
                 type="password"
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
                 name="password"
                 id="password"

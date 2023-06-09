@@ -1,11 +1,22 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
-// import { UserAuth } from "../../context/AuthContext"
+import { Link, Navigate, useNavigate } from "react-router-dom"
+import { UserAuth } from "../../context/AuthContextApi"
 
 export const SignUp = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  // const { user, signUp } = UserAuth()
+  const { user, signUp } = UserAuth()
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await signUp(email, password)
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="w-full h-screen">
       <img
@@ -18,10 +29,16 @@ export const SignUp = () => {
         <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
           <div className="max-w-[320px] mx-auto py-16">
             <h1 className="text-3xl font-bold">Sign Up</h1>
-            <form action="" className="flex flex-col py-4">
+            <form
+              action=""
+              className="flex flex-col py-4"
+              onSubmit={handleSubmit}
+            >
               <input
                 className="p-3 my-2 rounded-lg bg-gray-600 outline-none focus:drop-shadow-lg"
                 type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 placeholder="Enter Email"
                 name="email"
                 id="email "
@@ -30,6 +47,8 @@ export const SignUp = () => {
               <input
                 className="p-3 my-2 rounded-lg bg-gray-600 outline-none focus:shadow-lg"
                 type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
                 placeholder="Password"
                 name="password"
                 id="password"
